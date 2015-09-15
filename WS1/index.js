@@ -247,13 +247,22 @@ for(var i=0; i<data2.rentals.length;i++)
 				var charge = (temps *4);
 				var drivy2 = prix - insurance - roadsideAssistance - charge;
 				}
-				document.write('<br/> .........................');
+				document.write('<br/> +++++++++++++++++++');
 			document.write('</br>Le prix avec réduction est de : '  + prix+'€ <br/>');
 			document.write('</br>Le prix de l\'assurance est de : '  + insurance+'€ <br/>');
 			document.write('</br>Le prix de l\'assistance est de : '  + roadsideAssistance+'€ <br/>');
 			document.write('</br>Le prix du drivy est de : '  + drivy+'€ <br/>');
 			document.write('</br>Le prix des charges est de : '  + charge+'€ (pour réduction en cas d\'accident) <br/>');
 			document.write('</br>Le prix du drivy avec l\'assurance est de : '  + drivy2+'€ <br/>');
+			/*
+			document.write('</br>Le conducteur paye : '  + drivy+'€ <br/>');
+			document.write('</br>Le proprio reçois : '  + drivy+'€ <br/>');
+			document.write('</br>L\'assurance reçois : '  + drivy+'€ <br/>');
+			document.write('</br>L\assistance reçois : '  + drivy+'€ <br/>');
+			document.write('</br>Ledrivy reçoit : '  + drivy+'€ <br/>');
+			*/
+			
+			
 			//alert(prix);
 			//return prix; 
 			//on a relié voiture et proprio
