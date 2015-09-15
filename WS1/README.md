@@ -1,3 +1,11 @@
+NOTE DE l'ELEVE :
+Mon code est redondant, mal écrit et pas toujours bien indenté.
+Mais ayant peu de temps pour faire tous les exercices, j'ai paré au plus pressé,
+en gérant avec les bug, test et autres.
+Le résultat est fonctionnel, mais le code n'est pas parfait. 
+
+
+
 # JAVASCRIPT WORLD DOMINATION
 
 ## Intro
