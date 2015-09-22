@@ -85,7 +85,6 @@ for(var i=0; i<data2.rentals.length;i++)
 			document.write('</br>Le prix du drivy est de : '  + drivy+'€ <br/>');
 			//alert(prix);
 			//return prix; 
-			//on a relié voiture et proprio
 		}
 	}
 }

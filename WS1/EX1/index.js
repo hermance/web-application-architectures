@@ -73,7 +73,6 @@ for(var i=0; i<data.rentals.length;i++)
 			document.write('<br/>Le prix est de : '  + prix+'€ <br/>');
 			//alert(prix);
 			//return prix; 
-			//on a relié voiture et proprio
 		}
 	}
 }
