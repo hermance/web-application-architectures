@@ -50,10 +50,26 @@ var data2 = {
         "deductibleReduction": true
       }
     }
+  ],
+  "rentalModifications": [
+    {
+      "id": 1,
+      "rentalId": "1-pb-92" ,
+	  "pickupDate": "2015-09-12",
+      "returnDate": "2015-09-13",
+      "distance": 150
+    },
+    {
+      "id": 2,
+      "rentalId": "3-sa-92",
+	  "pickupDate": "2015-08-31",
+      "distance": 1000,
+      "returnDate": "2015-09-13",
+    }
   ]
 };
 
-document.write('<br/><br/>EXERCICE 5 <br/');
+document.write('<br/><br/>EXERCICE 6 <br/');
 for(var i=0; i<data2.rentals.length;i++)
 {
 	for(var j=0; j<data2.cars.length; j++){
@@ -93,6 +109,51 @@ for(var i=0; i<data2.rentals.length;i++)
 				var charge = (temps *4);
 				var drivy2 = prix - insurance - roadsideAssistance - charge;
 				}
+				
+				for(var y = 0; y<data2.rentalModifications.length;y++){
+						if(data2.rentals[i].id == data2.rentalModifications[y].rentalId){
+							//alert(temps);
+							//alert(data2.rentalModifications[y].returnDate);
+							returnDate = new Date(data2.rentalModifications[y].returnDate);
+							pickupDate = new Date(data2.rentalModifications[y].pickupDate);
+							temps = ((returnDate - pickupDate)/86400000)+1;
+							//alert(temps);
+							if(temps >= 1 && temps<4){
+								 prix = ((data2.cars[j].pricePerDay )  * temps)
+								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
+								prix = prix - 0.1*prix;
+								 insurance= prix /2;
+								 roadsideAssistance = 1*temps;
+								 drivy = prix - insurance - roadsideAssistance;
+								 charge = (temps *4);
+								 drivy2 = prix - insurance - roadsideAssistance - charge;
+							}
+							else if (temps >= 4 && temps<10){
+								 prix = ((data2.cars[j].pricePerDay )  * temps)
+								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
+								prix = prix - 0.3*prix;
+								 insurance= prix /2;
+								 roadsideAssistance = 1*temps;
+								 drivy = prix - insurance - roadsideAssistance;
+								 charge = (temps *4);
+								 drivy2 = prix - insurance - roadsideAssistance - charge;
+							}
+							else if (temps >= 10){
+								 prix = ((data2.cars[j].pricePerDay )  * temps)
+								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
+								prix = prix - 0.5*prix;
+								 insurance= prix /2;
+								 roadsideAssistance = 1*temps;
+								 drivy = prix - insurance - roadsideAssistance;
+								 charge = (temps *4);
+								 drivy2 = prix - insurance - roadsideAssistance - charge;
+							}
+						
+						}
+				}
+				
+				
+				
 				document.write('<br/> +++++++++++++++++++');
 			if(data2.cars.deductibleReduction == true)
 			{

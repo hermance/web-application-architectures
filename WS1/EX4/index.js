@@ -89,7 +89,7 @@ for(var i=0; i<data2.rentals.length;i++)
 			document.write('</br>Le prix de l\'assurance est de : '  + insurance+'€ <br/>');
 			document.write('</br>Le prix de l\'assistance est de : '  + roadsideAssistance+'€ <br/>');
 			document.write('</br>Le prix du drivy est de : '  + drivy+'€ <br/>');
-			document.write('</br>Le prix des charges est de : '  + charge+'€ (pour réduction en cas d\'accident) <br/>');
+			document.write('</br>Le prix des charges est de (deductible option) : '  + charge+'€ (pour réduction en cas d\'accident) <br/>');
 			document.write('</br>Le prix du drivy avec l\'assurance est de : '  + drivy2+'€ <br/>');
 
 		}
