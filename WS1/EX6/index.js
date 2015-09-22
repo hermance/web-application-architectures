@@ -111,42 +111,44 @@ for(var i=0; i<data2.rentals.length;i++)
 				}
 				
 				for(var y = 0; y<data2.rentalModifications.length;y++){
+						var test = false;
 						if(data2.rentals[i].id == data2.rentalModifications[y].rentalId){
+						test = true;
 							//alert(temps);
 							//alert(data2.rentalModifications[y].returnDate);
-							returnDate = new Date(data2.rentalModifications[y].returnDate);
-							pickupDate = new Date(data2.rentalModifications[y].pickupDate);
-							temps = ((returnDate - pickupDate)/86400000)+1;
+							var returnDate2 = new Date(data2.rentalModifications[y].returnDate);
+							var pickupDate2 = new Date(data2.rentalModifications[y].pickupDate);
+							var temps2 = ((returnDate2 - pickupDate2)/86400000)+1;
 							//alert(temps);
-							if(temps >= 1 && temps<4){
-								 prix = ((data2.cars[j].pricePerDay )  * temps)
+							if(temps2 >= 1 && temps2<4){
+								var prix2 = ((data2.cars[j].pricePerDay )  * temps2)
 								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
-								prix = prix - 0.1*prix;
-								 insurance= prix /2;
-								 roadsideAssistance = 1*temps;
-								 drivy = prix - insurance - roadsideAssistance;
-								 charge = (temps *4);
-								 drivy2 = prix - insurance - roadsideAssistance - charge;
+								var prix2 = prix - 0.1*prix;
+								 var insurance2= prix2 /2;
+								 var roadsideAssistance2 = 1*temps2;
+								 var drivy2 = prix2 - insurance2 - roadsideAssistance2;
+								  var charge2 = (temps2 *4);
+								  var drivy2 = prix2 - insurance2 - roadsideAssistance2 - charge2;
 							}
-							else if (temps >= 4 && temps<10){
-								 prix = ((data2.cars[j].pricePerDay )  * temps)
+							else if (temps2 >= 4 && temps2<10){
+								 var prix2 = ((data2.cars[j].pricePerDay )  * temps2)
 								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
-								prix = prix - 0.3*prix;
-								 insurance= prix /2;
-								 roadsideAssistance = 1*temps;
-								 drivy = prix - insurance - roadsideAssistance;
-								 charge = (temps *4);
-								 drivy2 = prix - insurance - roadsideAssistance - charge;
+								prix2 = prix2 - 0.3*prix2;
+								  var insurance2= prix2 /2;
+								  var roadsideAssistance2 = 1*temps2;
+								  var drivy2 = prix2 - insurance2 - roadsideAssistance2;
+								  var charge2 = (temps2 *4);
+								   var drivy2 = prix2 - insurance2 - roadsideAssistance2 - charge2;
 							}
-							else if (temps >= 10){
-								 prix = ((data2.cars[j].pricePerDay )  * temps)
+							else if (temps2 >= 10){
+								 var prix2 = ((data2.cars[j].pricePerDay )  * temps2)
 								+ (data2.cars[j].pricePerKm * data2.rentalModifications[y].distance);
-								prix = prix - 0.5*prix;
-								 insurance= prix /2;
-								 roadsideAssistance = 1*temps;
-								 drivy = prix - insurance - roadsideAssistance;
-								 charge = (temps *4);
-								 drivy2 = prix - insurance - roadsideAssistance - charge;
+								prix2 = prix2 - 0.5*prix2;
+								  var insurance2= prix2 /2;
+								 var roadsideAssistance2 = 1*temps2;
+								 var drivy2 = prix2 - insurance2 - roadsideAssistance2;
+								 var charge2 = (temps2 *4);
+								 var drivy2 = prix2 - insurance2 - roadsideAssistance2 - charge2;
 							}
 						
 						}
@@ -157,19 +159,26 @@ for(var i=0; i<data2.rentals.length;i++)
 				document.write('<br/> +++++++++++++++++++');
 			if(data2.cars.deductibleReduction == true)
 			{
-				document.write('</br>The driver pays : '  + prix+ charge+'€ <br/>');
+				if(test)document.write('</br>The driver paid : '  + prix+ charge+'€ <br/>');
+				document.write('</br>The driver pays : '  + prix2+ charge2+'€ <br/>');
 			}
 			else
 			{
-				document.write('</br>The driver pays : '  + prix  +'€ <br/>');
+				if(test)document.write('</br>The driver paid : '  + prix  +'€ <br/>');
+				document.write('</br>The driver pays : '  + prix2  +'€ <br/>');
 			}
-			document.write('</br>The owner receives : '  + insurance+'€ <br/>');
+			if(test)document.write('</br>The owner received : '  + insurance+'€ <br/>');
+			document.write('</br>The owner receives : '  + insurance2+'€ <br/>');
 			
 			
-			document.write('</br>The insurance receives : '  + roadsideAssistance+'€ <br/>');
-			document.write('</br>The assistance receives : '  + drivy+'€ <br/>');
-			document.write('</br>the drivy is : '  + drivy + charge+'€ (pour réduction en cas d\'accident) <br/>');
-
+			document.write('</br>The insurance received : '  + roadsideAssistance+'€ <br/>');
+			document.write('</br>The assistance received : '  + drivy+'€ <br/>');
+			document.write('</br>the drivy was : '  + drivy + charge+'€  <br/>');
+			if(test){
+			document.write('</br>The insurance receives : '  + roadsideAssistance2+'€ <br/>');
+			document.write('</br>The assistance receives : '  + drivy2+'€ <br/>');
+			document.write('</br>the drivy is : '  + drivy2 + charge2+'€ <br/>');
+			}
 		}
 	}
 }
