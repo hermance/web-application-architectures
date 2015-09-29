@@ -53,7 +53,11 @@ var data2 = {
   ]
 };
 
-document.write('<br/><br/>EXERCICE 5 <br/');
+var result;
+result = document.createElement("tr");
+result.innerHTML = "<td style=\"background-color : #ffa500\"><b>VOITURE/RENTAL</b></td><td style=\"background-color : #ffa500\"><b>Driver pays</b></td><td style=\"background-color : #ffa500\"><b>Owner Receives</b></td><td style=\"background-color : #ffa500\"><b>Insurance receives</b></td><td style=\"background-color : #ffa500\"><b>Assistance receives</b></td><td style=\"background-color : #ffa500\"><b>Dirvy (in cas of accident)</b></td>";
+document.body.insertBefore(result, document.getElementById('tr'));
+		
 for(var i=0; i<data2.rentals.length;i++)
 {
 	for(var j=0; j<data2.cars.length; j++){
@@ -93,22 +97,33 @@ for(var i=0; i<data2.rentals.length;i++)
 				var charge = (temps *4);
 				var drivy2 = prix - insurance - roadsideAssistance - charge;
 				}
-				document.write('<br/> +++++++++++++++++++');
+			result = document.createElement("tr");
+			result.innerHTML += "<td>"+data2.cars[j].id+"/"+data2.rentals[i].id+"</td>";
+			//<td>"  + prix+"€ </td><td>"  + insurance+"€ </td><td>"  + roadsideAssistance+"€ </td><td>"  + drivy+"€ </td>"
+			//+"<td>"  + charge+"€ </td><td>"  + drivy2+"€ </td>";
+			
 			if(data2.cars.deductibleReduction == true)
 			{
-				document.write('</br>The driver pays : '  + prix+ charge+'€ <br/>');
+				result.innerHTML += "<td>"  + prix+charge+"€ </td>";
+				//document.write('</br>The driver pays : '  + prix+ charge+'€ <br/>');
 			}
 			else
 			{
-				document.write('</br>The driver pays : '  + prix  +'€ <br/>');
+				result.innerHTML += "<td>"  + prix+"€ </td>";
+				//document.write('</br>The driver pays : '  + prix  +'€ <br/>');
 			}
-			document.write('</br>The owner receives : '  + insurance+'€ <br/>');
+			
+			result.innerHTML += "<td>"  +insurance+"€ </td><td>"+ roadsideAssistance+"</td><td>"+drivy+"€</td><td>"+drivy + charge+"€</td>";
+			document.body.insertBefore(result, document.getElementById('tr'));
+			
+			
+			/*document.write('</br>The owner receives : '  + insurance+'€ <br/>');
 			
 			
 			document.write('</br>The insurance receives : '  + roadsideAssistance+'€ <br/>');
 			document.write('</br>The assistance receives : '  + drivy+'€ <br/>');
 			document.write('</br>the drivy is : '  + drivy + charge+'€ (pour réduction en cas d\'accident) <br/>');
-
+*/
 		}
 	}
 }

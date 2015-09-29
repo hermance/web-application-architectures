@@ -69,7 +69,22 @@ var data2 = {
   ]
 };
 
-document.write('<br/><br/>EXERCICE 6 <br/');
+var result;
+result = document.createElement("tr");
+result.innerHTML = "<td style=\"background-color : #ffa500\"><b>VOITURE/RENTAL</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Driver Pays</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Driver paid</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Owner Receives</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Owner received</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Insurance receives </b></td>"
++"<td style=\"background-color : #ffa500\"><b>Insurance received</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Assistance is </b></td>"
++"<td style=\"background-color : #ffa500\"><b>Assistance received</b></td>"
++"<td style=\"background-color : #ffa500\"><b>Dirvy is </b></td>"
++"<td style=\"background-color : #ffa500\"><b>Dirvy was </b></td>";
+document.body.insertBefore(result, document.getElementById('tr'));
+	
+//document.write('<br/><br/>EXERCICE 6 <br/');
 for(var i=0; i<data2.rentals.length;i++)
 {
 	for(var j=0; j<data2.cars.length; j++){
@@ -155,19 +170,45 @@ for(var i=0; i<data2.rentals.length;i++)
 				}
 				
 				
-				
-				document.write('<br/> +++++++++++++++++++');
+			result = document.createElement("tr");
+			result.innerHTML += "<td>"+data2.cars[j].id+"/"+data2.rentals[i].id+"</td>";
 			if(data2.cars.deductibleReduction == true)
 			{
-				if(test)document.write('</br>The driver paid : '  + prix+ charge+'€ <br/>');
-				document.write('</br>The driver pays : '  + prix2+ charge2+'€ <br/>');
+				result.innerHTML += "<td>"  + prix2+charge2+"€ </td>";
+				//document.write('</br>The driver pays : '  + prix2+ charge2+'€ <br/>');
+				if(test)result.innerHTML += "<td>"  + prix+charge+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+				//document.write('</br>The driver paid : '  + prix+ charge+'€ <br/>');
+				
 			}
 			else
 			{
-				if(test)document.write('</br>The driver paid : '  + prix  +'€ <br/>');
-				document.write('</br>The driver pays : '  + prix2  +'€ <br/>');
+				result.innerHTML += "<td>"  + prix2+"€ </td>";
+				
+				if(test)result.innerHTML += "<td>"  + prix+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+				//if(test)document.write('</br>The driver paid : '  + prix  +'€ <br/>');
+				//document.write('</br>The driver pays : '  + prix2  +'€ <br/>');
 			}
-			if(test)document.write('</br>The owner received : '  + insurance+'€ <br/>');
+			
+			result.innerHTML += "<td>"  + insurance2+"€ </td>";
+			if(test)result.innerHTML += "<td>"  + insurance+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+			
+			
+			result.innerHTML += "<td>"  + roadsideAssistance+"€ </td>";
+			if(test)result.innerHTML += "<td>"  + roadsideAssistance2+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+			result.innerHTML += "<td>"  + drivy+"€ </td>";
+			if(test)result.innerHTML += "<td>"  + drivy+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+			result.innerHTML += "<td>"  + drivy+charge+"€ </td>";
+			if(test)result.innerHTML += "<td>"  + drivy+charge+"€ </td>";
+				else result.innerHTML += "<td><i>No Changes</i></td>";
+			
+			document.body.insertBefore(result, document.getElementById('tr'));
+			
+			/*document.write('</br>The owner received : '  + insurance+'€ <br/>');
 			document.write('</br>The owner receives : '  + insurance2+'€ <br/>');
 			
 			
@@ -178,7 +219,7 @@ for(var i=0; i<data2.rentals.length;i++)
 			document.write('</br>The insurance receives : '  + roadsideAssistance2+'€ <br/>');
 			document.write('</br>The assistance receives : '  + drivy2+'€ <br/>');
 			document.write('</br>the drivy is : '  + drivy2 + charge2+'€ <br/>');
-			}
+			}*/
 		}
 	}
 }

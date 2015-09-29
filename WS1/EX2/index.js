@@ -55,8 +55,11 @@ var data = {
     }
   ]
 }
-
-document.write('<br/><br/>EXERCICE 2 <br/');
+var result;
+			result = document.createElement("tr");
+			result.innerHTML = "<td style=\"background-color : #ffa500\"><b>VOITURE</b></td><td style=\"background-color : #ffa500\"><b>PRIX (réduction)</b></td>";
+			document.body.insertBefore(result, document.getElementById('tr'));
+			
 for(var i=0; i<data.rentals.length;i++)
 {
 	for(var j=0; j<data.cars.length; j++){
@@ -81,7 +84,11 @@ for(var i=0; i<data.rentals.length;i++)
 				+ (data.cars[j].pricePerKm * data.rentals[i].distance);
 				prix = prix - 0.5*prix;
 				}
-			document.write('</br>Le prix avec réduction est de : '  + prix+'€ <br/>');
+				
+			result = document.createElement("tr");
+			result.innerHTML = "<td>"+data.cars[j].id+"</td><td>"  + prix+"€ </td>";
+			document.body.insertBefore(result, document.getElementById('tr'));
+			//document.write('</br>Le prix avec réduction est de : '  + prix+'€ <br/>');
 			//alert(prix);
 			//return prix; 
 			//on a relié voiture et proprio
