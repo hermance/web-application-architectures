@@ -1,0 +1,39 @@
+table {
+ border-width:1px; 
+ border-style:solid; 
+ border-color:black;
+ width:50%;
+ border-collapse:collapse;
+ margin-right : auto;
+ margin-left : auto;
+ }
+td { 
+ border-width:1px;
+ border-style:solid; 
+ border-color:red;
+ width:250px;
+ text-align : center;
+ }
+ h1{
+ color : #ffa500;
+ }
+ a:link{
+ text-decoration:none;
+ }
+ 
+ /* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+ul{
+    list-style-type: upper-roman;
+
+}
+body{
+font-family: "Times New Roman", Times, serif;
+}

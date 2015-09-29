@@ -56,7 +56,13 @@ var data = {
   ]
 }
 //EXERCIE 1
-document.write('EXERCICE 1 <br/');
+
+			var result;
+			result = document.createElement("tr");
+			result.innerHTML = "<td style=\"background-color : #ffa500\"><b>VOITURE</b></td><td style=\"background-color : #ffa500\"><b>PRIX </b></td>";
+			document.body.insertBefore(result, document.getElementById('tr'));
+			
+			
 for(var i=0; i<data.rentals.length;i++)
 {
 	for(var j=0; j<data.cars.length; j++){
@@ -70,9 +76,25 @@ for(var i=0; i<data.rentals.length;i++)
 			//alert(temps);
 			var prix = (data.cars[j].pricePerDay * temps) + (data.cars[j].pricePerKm * data.rentals[i].distance);
 			//document.getElementById('result').innerHTML = 'Le résultat est : '  + prix;
-			document.write('<br/>Le prix est de : '  + prix+'€ <br/>');
+			/*var tableau = document.getElementById('tableau');
+			var ligne = tableau.insertRow(-1);
+			var colonne1 = ligne.insertCell(1);
+			colonne1.innerHTML+="<tr><td>"+data.cars[j].id+"</td><td>";
+			var colonne2 = ligne.insertCell(1);
+			colonne2.innerHTML+="<tr><td>"+prix+"€ </tr>";*/
+			result = document.createElement("tr");
+			result.innerHTML = "<td>"+data.cars[j].id+"</td><td>"  + prix+"€ </td>";
+			document.body.insertBefore(result, document.getElementById('tr'));
+			//.getElementById('result').innerHTML += "<tr><td>"+data.cars[j].id+"</td><td>"  + prix+"€ </tr>";
+			//document.getElementById('result').appendChild(result);
+			//document.write('<br/>Le prix est de : '  + prix+'€ <br/>');
 			//alert(prix);
 			//return prix; 
+			
+			
+			
+			
+			
 		}
 	}
 }
