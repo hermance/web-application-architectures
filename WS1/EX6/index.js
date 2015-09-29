@@ -196,13 +196,13 @@ for(var i=0; i<data2.rentals.length;i++)
 				else result.innerHTML += "<td><i>No Changes</i></td>";
 			
 			
-			result.innerHTML += "<td>"  + roadsideAssistance+"€ </td>";
-			if(test)result.innerHTML += "<td>"  + roadsideAssistance2+"€ </td>";
+			result.innerHTML += "<td>"  + roadsideAssistance2+"€ </td>";
+			if(test)result.innerHTML += "<td>"  + roadsideAssistance+"€ </td>";
 				else result.innerHTML += "<td><i>No Changes</i></td>";
-			result.innerHTML += "<td>"  + drivy+"€ </td>";
+			result.innerHTML += "<td>"  + drivy2+"€ </td>";
 			if(test)result.innerHTML += "<td>"  + drivy+"€ </td>";
 				else result.innerHTML += "<td><i>No Changes</i></td>";
-			result.innerHTML += "<td>"  + drivy+charge+"€ </td>";
+			result.innerHTML += "<td>"  + drivy2+charge2+"€ </td>";
 			if(test)result.innerHTML += "<td>"  + drivy+charge+"€ </td>";
 				else result.innerHTML += "<td><i>No Changes</i></td>";
 			

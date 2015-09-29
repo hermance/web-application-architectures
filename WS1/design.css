@@ -23,7 +23,7 @@ td {
  
  /* visited link */
 a:visited {
-    color: green;
+    color: black;
 }
 
 /* mouse over link */
@@ -31,8 +31,25 @@ a:hover {
     color: red;
 }
 ul{
-    list-style-type: upper-roman;
+    /*list-style-type: upper-roman;*/
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+	background-color : #ffb732;
 
+}
+li:hover{
+background-color:#3388BB;
+}
+ li{
+display:inline-block;
+width:100px;
+height : 40px;
+margin: 0px;
+padding:0px;
+border-right:1px solid #ffa500;
+text-align:center;
+line-height : 40px;
 }
 body{
 font-family: "Times New Roman", Times, serif;
